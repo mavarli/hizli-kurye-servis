@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const UserSchema = mongoose.Schema({
-    kullaniciTip: {
+const CourierSchema = mongoose.Schema({
+    kuryeTip: {
         type: String,
         required: true,
     },
@@ -9,25 +9,18 @@ const UserSchema = mongoose.Schema({
     soyad: String,
     tcKimlikNo: String,
     tcKimlikResim: String,
-    ehliyetResim: String,
-    restoranAdi: String,
-    kurumAdi: String,
-    vergiDairesi: String,
-    vergiNo: String,
     email: String,
-    telefon: String, 
-    dogumTarihi: String,
+    telefon: String,
+    dogumTarihi: Date,
+    calismaDurumu: String,
+    sistemeBagliMi: String,
     bankaAdi: String,
     bankaIban: String,
     bankaKullaniciAd: String,
     bankaKullaniciSoyad: String,
-    sifreHash: String,
     xKonum: String,
     yKonum: String,
-    calismaDurumu: { //Offline - Online - Calisiyor
-        type: String,
-        default: 'Offline'
-    },
+    sifreHash: String,
     adminMi: {
         type: Boolean,
         default: false
@@ -38,4 +31,4 @@ const UserSchema = mongoose.Schema({
     }  
 })
 
-exports.User = mongoose.model('users',UserSchema);
+ exports.Courier = mongoose.model('couriers',CourierSchema);

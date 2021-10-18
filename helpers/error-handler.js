@@ -1,6 +1,6 @@
 function errorHandler(err, req, res, next){
     if(err.name === 'UnauthorizedError'){
-        return res.status(401).json({message: "Kullanıcı unauthorized"})
+        return res.status(401).json({message: "Geçersiz Token. (Unauthorized)"})
     }
 
     if(err.name === 'ValidationError'){
